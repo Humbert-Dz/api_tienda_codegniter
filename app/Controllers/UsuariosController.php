@@ -8,7 +8,15 @@ use CodeIgniter\HTTP\Request;
 class UsuariosController extends BaseController
 {
 
-    public function documentacion(){
+    public function __construct()
+    {
+        header('Access-Control-Allow-Origin: *');
+        header('Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE');
+        header('Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
+    }
+
+    public function documentacion()
+    {
         return view('API_DOC');
     }
 
